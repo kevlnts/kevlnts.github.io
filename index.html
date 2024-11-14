@@ -19,6 +19,29 @@
 
         <!-- Javascript code here-->
         <script>
+            let deadline = new Date("Dec 3, 2024 22:00:00")
+            let now = new Date().getTime();
+
+            // Calls the funtion every second (1000 milliseconds)
+            let x = setInterval(function () {
+
+                // Time remaining is the deadline minus the current time
+                let t = deadline - now;
+                // Calculates the individual numbers to be displayed
+                let days = Math.floor(t/(1000*60*60*24));
+                let hours = Math.floor((t%(1000*60*60*24))/(1000*60*60));
+                let minutes = Math.floor((t%(1000*60*60*24))/(1000*60));
+                let seconds = Math.floor((t%(1000*60*60*24))/(1000));
+
+                // Shows the remaining time
+                document.getElementById('demo').innerHTML = days + "d" + hours + "h" + minutes + "m" + seconds + "s";
+                
+                // When time is reached
+                if(t<0){
+                    clearInterval(x);
+                    document.getElementById('demo').innerHTML = "EXPIRED";
+                }
+            }, 1000);
         </script>
     </body>
 
