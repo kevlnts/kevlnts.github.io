@@ -2,13 +2,22 @@
 <html>
 
     <head>
-        <title>My First Webpage!</title>
+        <title>Christmas Countdown</title>
 
         <!--CSS code here-->
         <style>
             p {
             text-align: center;
             font-size: 60px;
+            font-family: monospace;
+            color: black;
+            }
+            h1{
+            font-family: monospace;
+            color: black;
+            }
+            body {
+            background-color: bisque;
             }
         </style>
 
@@ -16,15 +25,15 @@
 
     <body>
         <div>
-            <h1>Sigma timer</h1>
-            <p>Erm what the sigma</p>
+            <h1>Test timer</h1>
+            <p>Test Title</p>
         </div>
         <hr>
         <p id="demo"></p>
 
         <!-- Javascript code here-->
         <script>
-            let deadline = new Date("Dec 3, 2024 22:00:00")
+            let deadline = new Date("Dec 25, 2024 00:00:00")
 
             // Calls the funtion every second (1000 milliseconds)
             let x = setInterval(function () {
