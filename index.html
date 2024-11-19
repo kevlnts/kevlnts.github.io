@@ -3,61 +3,126 @@
 
     <head>
         <title>Christmas Countdown</title>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap" rel="stylesheet">
 
         <!--CSS code here-->
         <style>
-            p {
-            text-align: center;
-            font-size: 60px;
-            font-family: monospace;
-            color: black;
+            
+            header{
+            font-family: 'Mountains of Christmas', serif;
+            font-weight: 700;
+            font-size: 40px;
+            background-color: rgba(255, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
             }
-            h1{
-            font-family: monospace;
-            color: black;
-            }
+
             body {
-            background-color: bisque;
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            text-align: center;
+            padding: 30px;
+            background-image: url('https://media.istockphoto.com/id/1344452903/vector/winter-snowflake-background.jpg?s=612x612&w=0&k=20&c=_vFhSHoEOyoB3PkD0d9e33d8nIPtp_mQs-kij7zTzjM=');
+            background-size: cover;
+            background-attachment: fixed;
+            }
+
+            #countdown-timer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+            }
+
+            .countdown-item {
+            margin: 40px;
+            font-size: 2rem;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 100px;
+            border-radius: 10px;
+            }
+
+            #seconds, #minutes, #hours, #days {
+            font-size: 100px;
+            font-weight: bold;
+            color: #d32f2f;
+            }
+
+            footer p {
+            font-style: italic;
+            font-family: 'Mountains of Christmas', serif;
+            font-weight: 700;
+            font-size: 40px;
+            color: #555;
             }
         </style>
-
     </head>
 
     <body>
         <div>
-            <h1>Test timer</h1>
-            <p>Test Title</p>
+            <header>Christmas Countdown</header>
         </div>
-        <hr>
-        <p id="demo"></p>
+        
+        <main>
+            <div id="countdown-timer">
+                <div class="countdown-item">
+                    <span id="days"></span>
+                    <p>Days</p>
+                </div>
+                <div class="countdown-item">
+                    <span id="hours"></span>
+                    <p>Hours</p>
+                </div>
+                <div class="countdown-item">
+                    <span id="minutes"></span>
+                    <p>Minutes</p>
+                </div>
+                <div class="countdown-item">
+                    <span id="seconds"></span>
+                    <p>Seconds</p>
+                </div>
+            </div>
+        </main>
 
         <!-- Javascript code here-->
         <script>
-            let deadline = new Date("Dec 25, 2024 00:00:00")
+            const countdownDate = new Date("Dec 25, 2024 00:00:00")
 
-            // Calls the funtion every second (1000 milliseconds)
-            let x = setInterval(function () {
+            const updateCountdown = () => {
+                const now = new Date().getTime();
+                const distance = countdownDate - now;
 
-                let now = new Date().getTime();
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-                // Time remaining is the deadline minus the current time
-                let t = deadline - now;
-                // Calculates the individual numbers to be displayed
-                let days = Math.floor(t/(1000*60*60*24));
-                let hours = Math.floor((t%(1000*60*60*24))/(1000*60*60));
-                let minutes = Math.floor((t%(1000*60*60))/(1000*60));
-                let seconds = Math.floor((t%(1000*60))/(1000));
+                document.getElementById("days").innerHTML = days;
+                document.getElementById("hours").innerHTML = hours;
+                document.getElementById("minutes").innerHTML = minutes;
+                document.getElementById("seconds").innerHTML = seconds;
 
-                // Shows the remaining time
-                document.getElementById('demo').innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-                
-                // When time is reached
-                if(t<0){
-                    clearInterval(x);
-                    document.getElementById('demo').innerHTML = "EXPIRED";
+                if (distance < 0) {
+                    clearInterval(interval);
+                    document.getElementById("countdown-timer").innerHTML = "Merry Christmas!";
                 }
-            }, 1000);
+            }
+
+            const interval = setInterval(updateCountdown, 1000);
+
         </script>
+
+        <footer>
+            <p>The magic of Christmas is just around the corner!</p>
+        </footer>
+
     </body>
 
 </html>
