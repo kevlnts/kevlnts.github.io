@@ -1,137 +1,224 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
-    <head>
-        <title>Christmas Countdown</title>
-        
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Countdown</title>
 
-        <!--CSS code here-->
-        <style>
-            
-            header{
-            font-family: 'Mountains of Christmas', serif;
-            font-weight: 700;
-            font-size: 40px;
-            background-color: rgba(255, 0, 0, 0.8);
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            }
-            
-            .secondary-header {
-            font-size: 1.5rem;
-            font-style: italic;
-            margin-top: 10px;
-            color: #fff;
-            }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap" rel="stylesheet">
 
-            body {
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
             font-family: 'Arial', sans-serif;
             background-color: #f0f8ff;
             color: #333;
             text-align: center;
-            padding: 60px 200px;
+            padding: 40px 0;
             background-image: url('https://media.istockphoto.com/id/1344452903/vector/winter-snowflake-background.jpg?s=612x612&w=0&k=20&c=_vFhSHoEOyoB3PkD0d9e33d8nIPtp_mQs-kij7zTzjM=');
             background-size: cover;
             background-attachment: fixed;
-            }
+        }
 
-            #countdown-timer {
+        /* Header Section */
+        header {
+            font-family: 'Mountains of Christmas', serif;
+            font-weight: 700;
+            font-size: 3rem; /* Larger font size */
+            background-color: rgba(255, 0, 0, 0.8);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 40px; /* Gap between header and countdown */
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .secondary-header {
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-top: 10px;
+            color: #fff;
+        }
+
+        /* Countdown Timer Section */
+        #countdown-timer {
             display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin-top: 40px;
+            flex-wrap: wrap;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .countdown-item {
+            font-size: 1.5rem;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 50px;
+            border-radius: 10px;
+            flex: 1 1 200px;
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin-top: 10px;
-            }
+            min-height: 250px; /* Adjust this to match the previous height */
+        }
 
-            .countdown-item {
-            margin: 40px;
-            font-size: 2rem;
-            background-color: rgba(255, 255, 255, 0.7);
-            padding: 100px;
-            border-radius: 10px;
-            }
-
-            #seconds, #minutes, #hours, #days {
-            font-size: 100px;
+        #seconds, #minutes, #hours, #days {
+            font-size: 4rem;
             font-weight: bold;
             color: #d32f2f;
-            }
+        }
 
-            footer p {
+        /* Footer Section */
+        footer {
+            margin-top: 50px;
+            font-size: 1.2rem;
             font-style: italic;
             font-family: 'Mountains of Christmas', serif;
             font-weight: 700;
-            font-size: 40px;
             color: #555;
-            }
-        </style>
-    </head>
+            text-align: center;
+        }
 
-    <body>
-        
-        <header>Christmas Countdown
-            <div class="secondary-header">Merry Christmas in Advance!</div>
-        </header>
-        
-        
-        <main>
-            <div id="countdown-timer">
-                <div class="countdown-item">
-                    <span id="days"></span>
-                    <p>Days</p>
-                </div>
-                <div class="countdown-item">
-                    <span id="hours"></span>
-                    <p>Hours</p>
-                </div>
-                <div class="countdown-item">
-                    <span id="minutes"></span>
-                    <p>Minutes</p>
-                </div>
-                <div class="countdown-item">
-                    <span id="seconds"></span>
-                    <p>Seconds</p>
-                </div>
+        /* Media Queries for Small Screens (Mobile & Tablets) */
+        @media (max-width: 768px) {
+            body {
+                padding: 40px 10px;
+            }
+
+            header {
+                font-size: 2.5rem;
+                padding: 20px;
+            }
+
+            .secondary-header {
+                font-size: 1.2rem;
+            }
+
+            #countdown-timer {
+                flex-direction: column; /* Stack countdown items vertically */
+                margin-top: 20px;
+            }
+
+            .countdown-item {
+                width: 80%; /* Full width for smaller screens */
+                margin: 15px auto; /* Center the countdown boxes */
+                min-height: 250px; /* Maintain the same height for countdown items */
+                font-size: 1.5rem;
+                padding: 40px;
+            }
+
+            #seconds, #minutes, #hours, #days {
+                font-size: 3rem;
+            }
+
+            footer {
+                font-size: 1rem;
+            }
+        }
+
+        /* Media Query for Very Small Screens (Phones in Portrait Mode) */
+        @media (max-width: 480px) {
+            header {
+                font-size: 2rem;
+                padding: 15px;
+            }
+
+            .secondary-header {
+                font-size: 1rem;
+            }
+
+            .countdown-item {
+                width: 90%; /* Take up most of the screen width */
+                min-height: 230px; /* Adjust height for small screens */
+                padding: 30px;
+                font-size: 1.2rem;
+            }
+
+            #seconds, #minutes, #hours, #days {
+                font-size: 2.5rem;
+            }
+
+            footer {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        Christmas Countdown
+        <div class="secondary-header">Merry Christmas in Advance!</div>
+    </header>
+
+    <main>
+        <div id="countdown-timer">
+            <div class="countdown-item">
+                <span id="days"></span>
+                <p>Days</p>
             </div>
-        </main>
+            <div class="countdown-item">
+                <span id="hours"></span>
+                <p>Hours</p>
+            </div>
+            <div class="countdown-item">
+                <span id="minutes"></span>
+                <p>Minutes</p>
+            </div>
+            <div class="countdown-item">
+                <span id="seconds"></span>
+                <p>Seconds</p>
+            </div>
+        </div>
+    </main>
 
-        <!-- Javascript code here-->
-        <script>
-            const countdownDate = new Date("Dec 25, 2024 00:00:00")
+    <footer>
+        <p>The magic of Christmas is just around the corner!</p>
+    </footer>
 
-            const updateCountdown = () => {
-                const now = new Date().getTime();
-                const distance = countdownDate - now;
+    <script>
+        const countdownDate = new Date("Dec 25, 2024 00:00:00");
 
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        const updateCountdown = () => {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
 
-                document.getElementById("days").innerHTML = days;
-                document.getElementById("hours").innerHTML = hours;
-                document.getElementById("minutes").innerHTML = minutes;
-                document.getElementById("seconds").innerHTML = seconds;
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-                if (distance < 0) {
-                    clearInterval(interval);
-                    document.getElementById("countdown-timer").innerHTML = "Merry Christmas!";
-                }
+            document.getElementById("days").innerHTML = days;
+            document.getElementById("hours").innerHTML = hours;
+            document.getElementById("minutes").innerHTML = minutes;
+            document.getElementById("seconds").innerHTML = seconds;
+
+            if (distance < 0) {
+                clearInterval(interval);
+                document.getElementById("countdown-timer").innerHTML = "Merry Christmas!";
             }
+        };
 
-            const interval = setInterval(updateCountdown, 1000);
+        const interval = setInterval(updateCountdown, 1000);
+    </script>
 
-        </script>
-
-        <footer>
-            <p>The magic of Christmas is just around the corner!</p>
-        </footer>
-
-    </body>
+</body>
 
 </html>
