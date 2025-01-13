@@ -1,5 +1,13 @@
 
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
 #webcam-container {
-    display: flex;
-    align-items: center;
+    margin-top: 20px;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
 }
