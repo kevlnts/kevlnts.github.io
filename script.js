@@ -1,9 +1,16 @@
+// Javascript Code
+
 const URL = "https://teachablemachine.withgoogle.com/models/RdvjUiPPf/";
 
 let model, webcam, labelContainer, maxPredictions;
 
 // Load the image model and setup the webcam
 async function init() {
+
+    // Remove the button
+    const startButton = document.getElementById("start-button");
+    startButton.style.display = "none";
+
     const modelURL = URL + "model.json";
     const metadataURL = URL + "metadata.json";
 
