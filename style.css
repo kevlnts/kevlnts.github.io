@@ -1,3 +1,4 @@
+/* CSS Code */
 
 h1 {
     color: #333;
@@ -23,4 +24,16 @@ h1 {
 #label-container {
     margin-top: 10px;
     text-align: center;
+}
+
+#start-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: red;
+    color: white;
+    border: #333;
+    border-radius: 5px;
+    display: block;
+    margin: 20px auto;
 }
