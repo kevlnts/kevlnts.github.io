@@ -1,5 +1,5 @@
 <!-- HTML Code -->
-
+ 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,22 +13,29 @@
 
 
 <body>
-    <div>
-        <h1>Teachable Machine Image Model</h1>
-        <button id="start-button" type="button" onclick="init()">Start</button>
+    <div id="main-container">
+
+        <!-- Header Section-->
+        <div>
+            <h1>Teachable Machine Image Model</h1>
+            <button id="start-button" type="button" onclick="init()">Start</button>
+        </div>
+        
+
+        <!-- Middle Section-->
+        <div id="webcam-wrapper">
+            <div id="webcam-container"></div>
+            <div id="label-container"></div>
+        </div>
+
+        <!-- Footer Section-->
+         
+
+        <!-- TensorFlow.js and Teachable Machine Library -->
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+        <script src="script.js"></script>
     </div>
-    
-    <div id="webcam-wrapper">
-        <div id="webcam-container"></div>
-        <div id="label-container"></div>
-    </div>
-
-    <!-- TensorFlow.js and Teachable Machine Library -->
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
-
-
-    <script src="script.js"></script>
 </body>
     
 </html>
