@@ -4,6 +4,13 @@ const URL = "https://teachablemachine.withgoogle.com/models/RdvjUiPPf/";
 
 let model, webcam, labelContainer, maxPredictions;
 
+function startApp() {
+    document.getElementById("webcam-overlay").style.display = "none";
+    document.getElementById("label-container").classList.remove = "hidden";
+
+    init();
+}
+
 // Load the image model and setup the webcam
 async function init() {
 
