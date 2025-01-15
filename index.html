@@ -16,20 +16,33 @@
     <div id="main-container">
 
         <!-- Header Section-->
-        <div>
-            <h1>Teachable Machine Image Model</h1>
-            <button id="start-button" type="button" onclick="init()">Start</button>
-        </div>
+         <header>
+            <div>
+                <h1>Teachable Machine Image Model</h1>
+                <p> Indentify gestures in real time!</p>
+            </div>
+        </header>
         
 
         <!-- Middle Section-->
         <div id="webcam-wrapper">
+
+            <!-- Button-->
+             <div id="webcam-overlay">
+                <button id="start-button" type="button" onclick="init()">Start</button>
+            </div>
+
+            <!-- Webcam -->
             <div id="webcam-container"></div>
-            <div id="label-container"></div>
         </div>
 
+        <!-- Label Predictions -->
+        <div id="label-container"></div>
+
+
         <!-- Footer Section-->
-         
+         <footer> Made by Me</footer>
+
 
         <!-- TensorFlow.js and Teachable Machine Library -->
         <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
