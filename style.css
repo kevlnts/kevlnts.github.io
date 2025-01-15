@@ -50,7 +50,16 @@ body {
     margin-top: 30px;
 }
 
+#webcam-overlay{
+    position: absolute; /* Position relative to parent */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center */
+    z-index: 2; /* Appear above webcam */
+}
+
 #webcam-container {
+    position: relative; /* Parent container for overlay*/
     margin: 0 auto;
     width: 80%;
     max-width: 600px;
@@ -71,10 +80,11 @@ body {
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
+    display: none;
 }
 
-.hidden {
-    display: none;
+#label-container.show {
+    display: block;
 }
 
 #start-button {
