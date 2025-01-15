@@ -5,19 +5,20 @@ const URL = "https://teachablemachine.withgoogle.com/models/RdvjUiPPf/";
 let model, webcam, labelContainer, maxPredictions;
 
 function startApp() {
-    document.getElementById("webcam-overlay").style.display = "none";
-    document.getElementById("label-container").classList.remove = "hidden";
+    // Hide start button
+    const overlay = document.getElementById("webcam-overlay");
+    overlay.style.display = "none";
 
+    // Show label container
+    const labelContainer = document.getElementById("label-container");
+    labelContainer.classList.add("show");
+
+    // Initialize
     init();
 }
 
 // Load the image model and setup the webcam
 async function init() {
-
-    // Remove the button
-    const startButton = document.getElementById("start-button");
-    startButton.style.display = "none";
-
     const modelURL = URL + "model.json";
     const metadataURL = URL + "metadata.json";
 
