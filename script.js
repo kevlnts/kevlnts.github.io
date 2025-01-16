@@ -68,6 +68,11 @@ async function init() {
 
     } catch (error) {
         console.error("Error during model setup: ", error);
+
+        // Error Message
+        const messageElement = document.getElementById("no-webcam-message");
+        if (messageElement) {
+            messageElement.style.display = "block";
     }
 }
 
