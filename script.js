@@ -33,6 +33,8 @@ async function init() {
     const flip = true; // whether to flip the webcam
     webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
     webcam.canvas.style.width = "100%";
+    webcam.canvas.style.height = "100%";
+    webcam.canvas.style.objectFit = "cover";
     await webcam.setup(); // request access to the webcam
     await webcam.play();
     window.requestAnimationFrame(loop);
