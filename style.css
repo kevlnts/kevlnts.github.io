@@ -18,6 +18,17 @@ header p {
     margin-bottom: 20px;
 }
 
+header .description {
+    font-size: 16px;
+    color: #555;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
