@@ -73,6 +73,7 @@ async function init() {
         const messageElement = document.getElementById("no-webcam-message");
         if (messageElement) {
             messageElement.style.display = "block";
+        }
     }
 }
 
