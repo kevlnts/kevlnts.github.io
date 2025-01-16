@@ -85,15 +85,17 @@ async function loop() {
 
 // Run the webcam image through the image model
 async function predict() {
-    const prediction = await model.predict(webcam.canvas);
-    console.log("Predictions: ", prediction); // Debugging
-    for (let i = 0; i < maxPredictions; i++) {
-        if (prediction[i].probability > highestPrediction.probability) {
-            highestPrediction = prediction[i];
-        }
-    }
+    if (model && webcam && webcam.canvas) {
+        const predictions = await model.predict(webcam.canvas);
+        console.log("Predictions: ", predictions); // Debugging
+        
+        // Get the most likely prediction
+        const highestPrediction = predictions.reduce((prev, curr) => 
+            prev.probability > curr.probability ? prev : curr
+        );
 
-    // Update the label container with the most likely prediction
-    const message = `You are holding up the '${highestPrediction.className}'`;
-    labelContainer.innerHTML = message;
+        // Update the label container with the most likely prediction
+        const message = `You are holding up the '${highestPrediction.className}'`;
+        labelContainer.innerHTML = message;
+    }
 }
