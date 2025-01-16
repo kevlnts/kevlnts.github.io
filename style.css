@@ -111,6 +111,7 @@ body {
 }
 
 footer {
+    border-top: 2px solid #ddd;
     margin-top: 20px;
     font-size: 14px;
     color: #555;
