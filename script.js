@@ -1,3 +1,5 @@
+// Javascript Code
+
 const URL = "https://teachablemachine.withgoogle.com/models/RdvjUiPPf/";
 
 let model, webcam, labelContainer, maxPredictions;
