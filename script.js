@@ -9,7 +9,6 @@ function startApp() {
 
 // Load the image model and setup the webcam
 async function init() {
-async function init() {
     try {
         const modelURL = URL + "model.json";
         const metadataURL = URL + "metadata.json";
