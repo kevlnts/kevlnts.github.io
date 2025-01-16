@@ -64,7 +64,7 @@ async function init() {
             labelContainer.appendChild(document.createElement("div"));
         }
         
-        labelContainer.classList.add("show"); // Add the class after the label container is populated
+        labelContainer.style.display = "block";
 
     } catch (error) {
         console.error("Error during model setup: ", error);
