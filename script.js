@@ -5,6 +5,13 @@ const URL = "https://teachablemachine.withgoogle.com/models/RdvjUiPPf/";
 let model, webcam, labelContainer, maxPredictions;
 
 function startApp() {
+    const overlay = document.getElementById("webcam-overlay");
+    overlay.style.display = "none";
+    const startButton = document.getElementById("startButton")
+    if (startButton) {
+        startButton.style.display = "none";
+    }
+
     console.log("Starting app..."); // Debugging
     init();
 }
