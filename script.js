@@ -31,14 +31,17 @@ async function init() {
         const webcamWidth = webcamContainer.offsetWidth;
         const webcamHeight = webcamWidth * (3 / 4);
 
+        // Create webcam object
         webcam = new tmImage.Webcam(webcamWidth, webcamHeight, flip); // width, height, flip
-        webcam.canvas.style.width = "100%";
-        webcam.canvas.style.height = "100%";
-        webcam.canvas.style.objectFit = "cover";
+        console.log("Webcam object: ", webcam); // Debugging
 
+        // Wait for webcam setup
         await webcam.setup(); // Request access to the webcam
         await webcam.play();
         window.requestAnimationFrame(loop);
+
+        // Ensure the webcam canvas is correctly initialized
+        console.log("Webcam canvas: ", webcam.canvas); // Debugging
 
         // Append webcam canvas to DOM
         webcamContainer.appendChild(webcam.canvas);
