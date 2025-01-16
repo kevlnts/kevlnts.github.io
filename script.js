@@ -10,7 +10,7 @@ function startApp() {
     overlay.style.display = "none";
 
     // Show label container
-    const labelContainer = document.getElementById("label-container");
+    labelContainer = document.getElementById("label-container");
     labelContainer.classList.add("show");
 
     // Initialize
