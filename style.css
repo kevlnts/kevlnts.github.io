@@ -94,6 +94,22 @@ body {
     object-fit: cover;
 }
 
+#no-webcam-message {
+    display: none;
+    color: red;
+    font-size: 1.2rem;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px;
+    position: absolute; /* Overlay on top of the webcam */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    border-radius: 5px;
+}
+
 #label-container {
     width: 80%;
     margin: 0 auto;
