@@ -88,7 +88,12 @@ async function predict() {
     const prediction = await model.predict(webcam.canvas);
     console.log("Predictions: ", prediction); // Debugging
     for (let i = 0; i < maxPredictions; i++) {
-        const classPrediction = prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-        labelContainer.childNodes[i].innerHTML = classPrediction;
+        if (prediction[i].probability > highestPrediction.probability) {
+            highestPrediction = prediction[i];
+        }
     }
+
+    // Update the label container with the most likely prediction
+    const message = `You are holding up the '${highestPrediction.className}'`;
+    labelContainer.innerHTML = message;
 }
