@@ -109,9 +109,10 @@ body {
 }
 
 #label-container {
-    width: 80%;
-    margin: 0 auto;
-    margin-top: 20px;
+    visibility: hidden; /* Initially hidden but still part of the layout */
+    display: flex; /* Make sure it follows Flexbox for centering */
+    justify-content: center;
+    align-items: center;
     font-size: 1.2rem;
     padding: 10px;
     border: 1px solid #ddd;
@@ -119,10 +120,6 @@ body {
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
-}
-
-#label-container.show {
-    display: block;
 }
 
 #start-button {
@@ -152,8 +149,6 @@ footer {
     color: #555;
 }
 
-
-/*ChatGPT Code Below */
 /* For tablets (screens up to 1024px wide) */
 @media (max-width: 1024px) {
     #main-container {
