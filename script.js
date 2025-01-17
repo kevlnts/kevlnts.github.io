@@ -103,7 +103,7 @@ async function predict() {
             labelContainer.innerHTML = "You are holding up nothing.";
         } else {
             // Otherwise, display the detected class name
-            const message = `You are holding up the ${highestPrediction.className}`;
+            const message = `You are holding up the ${highestPrediction.className}.`;
             labelContainer.innerHTML = message;
         }
     }
