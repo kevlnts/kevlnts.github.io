@@ -60,14 +60,11 @@ async function init() {
             return;
         }
 
-        // Make the label container visible after webcam starts
-        labelContainer.style.visibility = "visible";  // Show the label container
+        labelContainer.style.display = "block";
 
         for (let i = 0; i < maxPredictions; i++) {
             labelContainer.appendChild(document.createElement("div"));
         }
-        
-        labelContainer.style.display = "block";
 
     } catch (error) {
         console.error("Error during model setup: ", error);
