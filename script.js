@@ -60,7 +60,7 @@ async function init() {
             return;
         }
 
-        labelContainer.style.display = "block";
+        labelContainer.style.visibility = "visible";
 
         for (let i = 0; i < maxPredictions; i++) {
             labelContainer.appendChild(document.createElement("div"));
