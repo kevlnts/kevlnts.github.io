@@ -94,8 +94,17 @@ async function predict() {
             prev.probability > curr.probability ? prev : curr
         );
 
-        // Update the label container with the most likely prediction
-        const message = `You are holding up the ${highestPrediction.className}`;
-        labelContainer.innerHTML = message;
+        // Define a confidence threshold (e.g., 0.5)
+        const confidenceThreshold = 0.5;
+
+        // Check if the highest prediction probability is above the threshold
+        if (highestPrediction.probability < confidenceThreshold) {
+            // If the confidence is low, display "nothing"
+            labelContainer.innerHTML = "You are holding up nothing.";
+        } else {
+            // Otherwise, display the detected class name
+            const message = `You are holding up the ${highestPrediction.className}`;
+            labelContainer.innerHTML = message;
+        }
     }
 }
