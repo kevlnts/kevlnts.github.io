@@ -5,7 +5,7 @@ const URL = "https://teachablemachine.withgoogle.com/models/F-UF20q5N/";
 let model, webcam, labelContainer, maxPredictions;
 
 function startApp() {
-    const startButton = document.getElementById("start-Button")
+    const startButton = document.getElementById("start-button")
     if (startButton) {
         startButton.style.display = "none";
     }
