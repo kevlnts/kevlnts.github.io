@@ -1,6 +1,6 @@
 // Javascript Code
 
-const URL = "https://teachablemachine.withgoogle.com/models/RdvjUiPPf/";
+const URL = "https://teachablemachine.withgoogle.com/models/F-UF20q5N/";
 
 let model, webcam, labelContainer, maxPredictions;
 
@@ -94,7 +94,7 @@ async function predict() {
             prev.probability > curr.probability ? prev : curr
         );
 
-        // Check if the predicted class is "nothing"
+        // Check if the predicted class is exactly "Nothing"
         if (highestPrediction.className === "Nothing") {
             labelContainer.innerHTML = "You are holding up nothing.";
         } else {
