@@ -5,8 +5,6 @@ const URL = "https://teachablemachine.withgoogle.com/models/F-UF20q5N/";
 let model, webcam, labelContainer, maxPredictions;
 
 function startApp() {
-    const overlay = document.getElementById("webcam-overlay");
-    overlay.style.display = "none";
     const startButton = document.getElementById("startButton")
     if (startButton) {
         startButton.style.display = "none";
