@@ -65,15 +65,14 @@ body {
 
 #webcam-overlay {
     position: absolute; /* Position relative to parent */
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Adjust position to exactly center */
-    width: 100%;
-    height: 100%; /* Ensure it covers the full webcam container */
-    display: flex;
-    justify-content: center; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    display: flex; 
+    justify-content: center;
     align-items: center; 
-    z-index: 2; /* Appear above the webcam feed */
+    z-index: 2;
 }
 
 #webcam-container {
