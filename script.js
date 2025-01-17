@@ -95,7 +95,7 @@ async function predict() {
         );
 
         // Update the label container with the most likely prediction
-        const message = `You are holding up the '${highestPrediction.className}'`;
+        const message = `You are holding up the ${highestPrediction.className}`;
         labelContainer.innerHTML = message;
     }
 }
