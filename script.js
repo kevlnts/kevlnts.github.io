@@ -60,6 +60,9 @@ async function init() {
             return;
         }
 
+        // Make the label container visible after webcam starts
+        labelContainer.style.visibility = "visible";  // Show the label container
+
         for (let i = 0; i < maxPredictions; i++) {
             labelContainer.appendChild(document.createElement("div"));
         }
