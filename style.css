@@ -109,8 +109,7 @@ body {
 }
 
 #label-container {
-    visibility: hidden; /* Initially hidden but still part of the layout */
-    display: flex; /* Make sure it follows Flexbox for centering */
+    display: none; /* Initially hidden, will not take up space in the layout */
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
