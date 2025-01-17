@@ -94,16 +94,12 @@ async function predict() {
             prev.probability > curr.probability ? prev : curr
         );
 
-        // Define a confidence threshold (e.g., 0.5)
-        const confidenceThreshold = 0.5;
-
-        // Check if the highest prediction probability is above the threshold
-        if (highestPrediction.probability < confidenceThreshold) {
-            // If the confidence is low, display "nothing"
+        // Check if the predicted class is "nothing"
+        if (highestPrediction.className === "Nothing") {
             labelContainer.innerHTML = "You are holding up nothing.";
         } else {
             // Otherwise, display the detected class name
-            const message = `You are holding up the ${highestPrediction.className}.`;
+            const message = `You are holding up the '${highestPrediction.className}'`;
             labelContainer.innerHTML = message;
         }
     }
